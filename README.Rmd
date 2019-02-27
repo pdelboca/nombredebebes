@@ -16,9 +16,9 @@ suppressMessages(library(dplyr))
 ```
 # nombredepersonas
 
-Nombre de Personas es un paquete que contiene los nombres registrados en el Registro Nacional de las Personas agrupados por año. La información surge de los puestos de toma de trámites del DNI en todo el país, incluyendo argentinos y extranjeros nacionalizados.
+Nombre de Personas es un paquete que contiene los nombres registrados en el Registro Nacional de las Personas agrupados por año. La información surge de los puestos de toma de trámites del DNI en todo el país, incluyendo argentines y extranjeres nacionalizades.
 
-Paquete inspirado en (babynames)[https://github.com/hadley/babynames] con datos obtenidos de: (https://datos.gob.ar/dataset/otros-nombres-personas-fisicas)[https://datos.gob.ar/dataset/otros-nombres-personas-fisicas]
+Paquete inspirado en [babynames](https://github.com/hadley/babynames) con datos obtenidos de: [https://datos.gob.ar/dataset/otros-nombres-personas-fisicas](https://datos.gob.ar/dataset/otros-nombres-personas-fisicas)
 
 ## Instalación
 

@@ -6,12 +6,11 @@
 Nombre de Personas es un paquete que contiene los nombres registrados en
 el Registro Nacional de las Personas agrupados por año. La información
 surge de los puestos de toma de trámites del DNI en todo el país,
-incluyendo argentinos y extranjeros nacionalizados.
+incluyendo argentines y extranjeres nacionalizades.
 
-Paquete inspirado en
-(babynames)\[<https://github.com/hadley/babynames>\] con datos obtenidos
-de:
-(<https://datos.gob.ar/dataset/otros-nombres-personas-fisicas>)\[<https://datos.gob.ar/dataset/otros-nombres-personas-fisicas>\]
+Paquete inspirado en [babynames](https://github.com/hadley/babynames)
+con datos obtenidos de:
+<https://datos.gob.ar/dataset/otros-nombres-personas-fisicas>
 
 ## Instalación
 
@@ -33,21 +32,21 @@ library(nombredepersonas)
 
 nombres[sample(nrow(nombres), 1), "nombre"]
 #> # A tibble: 1 x 1
-#>   nombre         
-#>   <chr>          
-#> 1 Yessica Sabrina
+#>   nombre          
+#>   <chr>           
+#> 1 Ticiano Ezequiel
 ```
 
 ``` r
 nombres[sample(nrow(nombres), 5), "nombre"]
 #> # A tibble: 5 x 1
-#>   nombre          
-#>   <chr>           
-#> 1 Milenka Yael    
-#> 2 Norberto Sandro 
-#> 3 Felisa del Pilar
-#> 4 Facundo Dario   
-#> 5 Enzo Hussein
+#>   nombre           
+#>   <chr>            
+#> 1 Josefa Herminia  
+#> 2 Agustin Mateo    
+#> 3 Hernan De La Cruz
+#> 4 Angeles Alahi    
+#> 5 Maria Costanza
 ```
 
 ### Generador aleatorio de nombres con precisión histórica
@@ -58,11 +57,11 @@ nombres %>%
   sample_n(3) %>% 
   select(nombre)
 #> # A tibble: 3 x 1
-#>   nombre       
-#>   <chr>        
-#> 1 Ezequiel Ivan
-#> 2 Sonia Pamela 
-#> 3 Uriel Dario
+#>   nombre                
+#>   <chr>                 
+#> 1 Bruno Walter Bartolomé
+#> 2 Fernando Amadeo       
+#> 3 Verónica Julieta
 ```
 
 ### Notas de color como saber qué nombre fue más usado en un año en particular
