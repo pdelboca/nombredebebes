@@ -1,4 +1,5 @@
 library(dplyr)
+library(readr)
 
 if (!file.exists("data-raw/historico-nombres.csv")) {
   tmp <- tempfile(fileext = ".zip")
@@ -8,7 +9,11 @@ if (!file.exists("data-raw/historico-nombres.csv")) {
   unlink(tmp)
 }
 
-nombres <- read.csv("data-raw/historico-nombres.csv", stringsAsFactors = FALSE)
+nombres <- read_csv("data-raw/historico-nombres.csv") %>%
+  select(anio, nombre, cantidad) %>%
+  arrange(anio, nombre)
+
+write_csv(head(nombres,10), "data-raw/nombredepersonas_sample.csv")
 
 usethis::use_data(nombres, compress = "xz", overwrite = T)
 
