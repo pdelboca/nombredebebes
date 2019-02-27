@@ -9,7 +9,7 @@ if (!file.exists("data-raw/historico-nombres.csv")) {
   unlink(tmp)
 }
 
-nombres_2 <- read_csv("data-raw/historico-nombres.csv") %>%
+nombres <- read_csv("data-raw/historico-nombres.csv") %>%
   group_by(anio, nombre) %>%
   summarise(cantidad = sum(cantidad)) %>%
   select(anio, nombre, cantidad) %>%
