@@ -1,0 +1,77 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+
+suppressMessages(library(dplyr))
+```
+# nombredepersonas
+
+Nombre de Personas es un paquete que contiene los nombres registrados en el Registro Nacional de las Personas agrupados por año. La información surge de los puestos de toma de trámites del DNI en todo el país, incluyendo argentinos y extranjeros nacionalizados.
+
+Paquete inspirado en (babynames)[https://github.com/hadley/babynames] con datos obtenidos de: (https://datos.gob.ar/dataset/otros-nombres-personas-fisicas)[https://datos.gob.ar/dataset/otros-nombres-personas-fisicas]
+
+## Instalación
+
+``` r
+# Install the development version from GitHub
+devtools::install_github("pdelboca/nombredepersonas")
+```
+
+## Ejemplo
+
+Porqué existe este paquete? Basicamente porque puedo hacerlo :)
+
+Para qué se podría utilzar?
+
+### Generador aleatorio de nombres
+```{r example_1}
+library(nombredepersonas)
+
+nombres[sample(nrow(nombres), 1), "nombre"]
+```
+```{r example_2}
+nombres[sample(nrow(nombres), 5), "nombre"]
+```
+
+### Generador aleatorio de nombres con precisión histórica
+```{r example_3}
+nombres %>%
+  filter(anio == 1976) %>% 
+  sample_n(3) %>% 
+  select(nombre)
+```
+
+### Notas de color como saber qué nombre fue más usado en un año en particular
+```{r example_4}
+nombres %>% 
+  filter(anio == 1987) %>% 
+  arrange(desc(cantidad)) %>% 
+  head()
+```
+
+### Algún gráfico con nombres históricos
+```{r example_5}
+library(ggplot2)
+
+nombres %>% 
+  filter(nombre %in% c("Diego Armando", "Jorge Rafael")) %>% 
+  ggplot() +
+  aes(x=anio, y=cantidad, color=nombre) +
+  geom_line() +
+  theme_minimal() +
+  labs(title="Diego Armando vs Jorge Rafael",
+       subtitle="Cantidad de Personas con dichos nombres en Argentina.",
+       y="Cantidad de Personas", x="Año")
+
+```
+

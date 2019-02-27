@@ -39,3 +39,6 @@ use_news_md()
 
 # Clean your description
 use_tidy_description()
+
+# Documentation
+use_readme_rmd()
