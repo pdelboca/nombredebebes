@@ -1,11 +1,15 @@
 Package: nombredepersonas
-Type: Package
-Title: What the Package Does (Title Case)
+Title: Nombre de Personas
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Authors@R: 
+    person(given = "Patricio",
+           family = "Del Boca",
+           role = c("cre", "aut"),
+           email = "patriciodelboca@gmail.com")
+Description: Nombres registrados en el Registro Nacional de las
+    Personas (Argentina) agrupados por año.
+License: MIT + file LICENSE
+URL: https://github.com/pdelboca/nombredepersonas
+BugReports: https://github.com/pdelboca/nombredepersonas/issues
 Encoding: UTF-8
 LazyData: true
