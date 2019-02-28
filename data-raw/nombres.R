@@ -13,7 +13,8 @@ nombres <- read_csv("data-raw/historico-nombres.csv") %>%
   group_by(anio, nombre) %>%
   summarise(cantidad = sum(cantidad)) %>%
   select(anio, nombre, cantidad) %>%
-  arrange(anio, nombre)
+  arrange(anio, nombre) %>%
+  ungroup()
 
 write_csv(head(nombres,10), "data-raw/nombredepersonas_sample.csv")
 
